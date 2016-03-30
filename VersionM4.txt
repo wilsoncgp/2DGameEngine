@@ -1,0 +1,66 @@
+HAPIGame v1.1.0
+
+Milestone Aims:
+
+To get a fully working black-boxed World Component which handles
+numerous world entities i.e. player, enemies, background. with
+interpolating values between updates.
+
+26/11/12
+
+- Created a WorldModel and Entity class
+- Sent all the data from the main.cpp file into this WorldModel
+	and initialized and deleted the WorldModel from main.cpp
+	after the game loop has ended, thus deleting everything
+	else that is needed to be deleted.
+- Created a PlayerEntity class that inherits from Entity
+- Entity data is used as protected so it is accessible from the
+	child classes to be made.
+- Created the render function for Entities, which takes in a
+	pointer to the Visualisation component and uses it to
+	draw the entity's texture at its position.
+- Created the Update function for the Entities which takes in
+	Keyboard and Controller data to handle input. The function
+	in the PlayerEntity alters the position of the entity 
+	based on its speed values and the keys pressed/analogue
+	sticks moved.
+- Added a couple of time variables to the main.cpp file to restrict
+	the updating from happening every frame but rather every
+	given number of milliseconds.
+
+27/11/12
+
+- Added a Draw method to the WorldModel class to take all the
+	drawing code from the Update method so it can be handled
+	seperately.
+
+30/11/12
+
+- Slightly altered the Time code for working with ticks in the
+	Update Method of WorldModel.
+- Added Interpolation value to Render call, based on the time
+	between ticks. Now drawing will take place even during the
+	times when the entities are not being updated.
+- Used the interpolation value to determine the Entity's drawn
+	position between the old and new position between updates.
+
+1/12/12
+
+- Created an Enemy Entity class, inheriting from Entity
+- Made my own textures for the 2 entities, player facing up,
+	enemy facing down.
+- Added the enemy movement to its update class, using an updating
+	theta value, the position of the ship looks like its going
+	in a figure of 8 motion whilst moving down the screen.
+
+3/12/12
+
+- Created a Background Entity Class, to be used with drawing a
+	scrolling background.
+- Made a new texture for the background.
+
+4/12/12
+
+- Added supporting code in the Visualisation to draw a scrolling
+	background. Using the interpolation value, the background
+	doesn't jump between updates either.

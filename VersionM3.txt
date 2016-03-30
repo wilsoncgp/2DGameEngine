@@ -1,0 +1,58 @@
+HAPIGame v1.0.0
+
+
+Milestone Aims:
+
+To get a fully working black-boxed Visualisation component with loading and 
+drawing textures. Textures should be able to be clipped and animated as the
+user pleases.
+
+
+13/11/2012
+
+- Started Visualisation, Sprite and Rectangle classes
+- Set up basic Rectangle structure with variables for the sides, and methods
+	to update the rectangle
+- Created ClearScreen method for Visualisation class
+- Created LoadTexture method for both Visualisation and Sprite classes
+
+16/11/2012
+
+- Created Draw Texture methods for both Visualisation and Sprite classes
+- Added User Message to the LoadTexture function of the Sprite, to tell
+	the user when a texture hasn't been loaded properly, and which
+	texture it was.
+- Each Loaded texture returns an ID integer. The ID will return as -1
+	if the texture wasn't loaded correctly.
+
+20/11/2012
+
+- Copied over DrawTexture code to work with Visualisation and Sprite classes
+- Altered this code to provide use for a source rectangle instead of positions
+	and image size for drawing and clipping
+
+25/11/2012
+
+- Started adding code to handle Animations
+- Created member variables for an animation boolean, frame rectangles/width/height
+	and indexes into a given image
+- Added code to support sprite-sheet images with default values for the animation
+	boolean and frame width/height in case an image isn't a sprite-sheet.
+- Added a new (with the intention to deprecate the original) DrawTexture method,
+	using the values for the frame rectangle positions to draw the image in a
+	set position and using the current frame index values to find which part of
+	the image to draw.
+- Added an extra member variable for time, set to the current time plus another
+	member variable's value	of milliseconds for the time between frames.
+	These variables will calculate how quick an animation will run.
+- Using these variables is a method called RunAnimation which will run if the
+	animation boolean is true and if the current time is after the target time.
+	The current frame will increment along the X then Y values. Once it reaches
+	the end, it will reset the frame to 0,0. This method also resets the
+	time variable to ensure the animation doesn't run every frame.
+
+26/11/2012
+
+- Added SetCurrentFrame methods and altered the LoadTexture methods of the Visualisation
+	and Sprite classes, for use with animation that is decided by input, such as
+	character facing.

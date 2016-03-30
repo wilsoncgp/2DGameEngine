@@ -1,0 +1,54 @@
+First HAPI Version 1.0.0:
+
+09/10/2012
+- Created first HAPI project with include to HAPI lib file, main method and HAPI_Update method.
+- Clear screen method added, able to set via byte (commented out) or memcpy function.
+- Created Set Pixel method with methods declared at top of .cpp file, intention to use .h file.
+
+Version 1.0.1
+
+11/10/2012
+- Finished creating SetPixel method and an example to draw a vertical line down the screen
+- Created a DrawLine method which takes in the x and y values of 2 positions and draws a
+	line between them, using Bresenham's Line Algorithm and my own SetPixel method.
+- Started DrawStar method
+
+Version 1.0.2
+
+12/10/2012
+- Improved DrawLine method to ensure it doesn't draw off-screen. Also when line crosses screen
+	width, it doesn't draw from other side of screen instead.
+- Created loops to set pixels that look like dotted stars (in Update method, not its own)
+
+Version 1.0.3
+
+13/10/2012
+- Found working algorithm to draw 5-pointed stars and implemented it successfully using my DrawLine
+	method. The stars are always of equal width and height by using singular 'size' variable.
+- Created similar loops to pixels to draw 5-pointed stars across the screen.
+- Added to both pixel and 5-pointed star loops an offset so they're not all in rows and columns
+
+Version 1.0.4
+
+15/10/2012
+- Added 'random' functionality so you can declare a number of stars and their positions will be
+	determined by the rand() function using modulus and the screen width and height.
+- Created single loops for both the pixel and 5-pointed stars to be drawn via random positions
+- Encountered problems with stack overflow as number of stars increased over 100,000. Now using
+	Heap memory with malloc() function.
+
+Version 1.0.5
+
+16/10/2012
+- Moved all iterating functions into named methods that can be called within HAPI->Update()
+- Commented out all test usage of these functions
+- Introduced Keyboard Input, using keys '1', '2', '3' and '4', the user can now choose between
+	functions. (Currently, the left-most keys hold priority over the keys to the right)
+- ERROR: Getting access violation errors if window width/height is greater than actual screen
+	width/height. Assume it's something to do with drawing off-screen as it only causes
+	trouble in DrawRandomStarFilledScreenPixel() method, the only method able to set pixels
+	outside of window.
+- SOLUTION: The variable ScreenHeight was only being allowed to be a maximum of 1028 whilst I was
+	setting it to above that number. It seems clear that if a height or width is too big, HAPI
+	will clamp it down, but the declared variable won't change.
+	Now allocating memory after the Initialise function.

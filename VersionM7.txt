@@ -1,0 +1,31 @@
+HAPIGame v1.4.0
+
+Milestone Aims: Implement Sounds in the game
+	And add win/lose conditions.
+
+02/01/13
+
+- I created a SoundManager to handle sound in
+	the game.
+- I initially used HAPI to load the sound and
+	play the sound in my sound manager.
+	Problem was, only one sound can play
+	at a time in HAPI.
+
+07/01/13
+- Decided to look into FMOD as part of implementing
+	sound.
+
+08/01/13
+- Found a decent tutorial on coding for FMOD,
+	used example code (referenced) to create
+	a Sound Manager that could play more than
+	one sound at a time.
+- Added the use of sounds to when a bullet is shot
+	by the player or the enemy, and also when
+	a player or enemy is destroyed.
+	Note: Not the same sound...
+
+09/01/13
+- Added win/lose conditions
+- Ready to hand in

@@ -1,0 +1,68 @@
+Test 1:
+
+FPS of Clear Screen (600x300)
+
+1221 FPS
+
+Test 2:
+
+FPS of set Pixel Stars (600x300)
+
+1100 FPS
+
+Test 3:
+
+Limit of Random Pixels without reaching FPS of 0 (600x300)
+
+1,000,000 pixels - 145 FPS
+10,000,000 pixels - 18 FPS
+100,000,000 pixels - 2 FPS
+150,000,000 pixels - 3 FPS
+180,000,000 pixels - 3 FPS
+190,000,000 pixels - Access Violation
+
+Test 4:
+
+FPS of set 5-Pointed Stars (600x300)
+
+850 FPS
+
+Test 5:
+
+Limit of 5-Pointed Stars without reaching FPS of 0 (600x300)
+
+1,000,000 stars - 2 FPS
+10,000,000 stars - 6 FPS...
+
+Test 6:
+
+FPS of Clear Screen (1024x768)
+
+227 FPS
+
+Test 7:
+
+FPS of set Pixel Stars (1024x768)
+
+205 FPS
+
+Test 8:
+
+Limit of Random Pixels without reaching FPS of 0 (1024x768)
+
+1,000,000 - 69 FPS
+10,000,000 - 10 FPS
+100,000,000 - 3 FPS
+
+Test 9:
+
+FPS of set 5-Pointed Stars (1024x768)
+
+164 FPS
+
+Test 10:
+
+Limit of 5-Pointed Stars without reaching FPS of 0 (1024x768)
+
+1,000,000 - 2 FPS
+10,000,000 - 6 FPS

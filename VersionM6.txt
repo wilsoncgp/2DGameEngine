@@ -1,0 +1,23 @@
+HAPIGame v1.3.0
+
+Milestone Aims: Create an Enemy Manager, which will
+	handle the creation of Enemies based on a flag call.
+	Also add Explosion Entities.
+
+15/12/12
+
+- Created the Enemy Manager class
+- Enemy Manager contains code to handle the creation
+	of new enemies, whilst also having a flag to
+	determine whether or not a new enemy is needed.
+
+17/12/12
+
+- The EnemyManager will slowly decrease the time between
+	spawns until the enemies spawn every tick, for
+	a catastrophical attack on the player.
+- An Explosion Entity class has been made to handle
+	the short explosion animations involved.
+- When each enemy is now destroyed, the explosion entity
+	will play across one of the strips of explosions
+	provided until the animation is finished.

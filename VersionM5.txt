@@ -1,0 +1,37 @@
+HAPIGame v1.2.0
+
+Milestone Aims:
+
+To get player and enemy shooting bullets, and for
+collision checks to work. Also, get a HUD to display
+the damage being done by collisions.
+
+7/12/12
+- Created a BulletEntity class to handle bullets
+- Using a bullet texture, the bullets will be created
+	when flagged by either the player or enemy.
+- Bullets are created slightly off from either the
+	player or the enemy, and based on their Side,
+	travel up or down.
+
+8/12/12
+- Started typing up collision code in the WorldModel
+	update method and the Rectangle file
+- Whenever an entity of a different side collides together
+	both entitites now take damage from one another.
+	If that entity is a bullet, it will be destroyed.
+- Player and Enemy ships can also collide with one another
+	to cause damage.
+
+10/12/12
+- Created a HUD texture and a Health Bar Texture.
+- Created a HUD entity which handles score, ammo and health
+	and draws them to the screen.
+- Now when an enemy is hit and its health is below or equal
+	to zero, it will be destroyed.
+- Added a method to the Visualisation/Sprite classes to draw
+	an updating Health Bar. The less health, the less of
+	the health bar texture is shown.
+- All members of the HUD entity are updated in the WorldModel
+- HUD now draws bullet textures for each bullet in the clip left
+- Also draws a score now in its given box
